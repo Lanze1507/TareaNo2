@@ -1,0 +1,76 @@
+// Condicionales (IF - ELSE)
+#include <iostream>
+using namespace std;
+
+int Laedad() {
+    int edad;
+    cout << "Ingrese su edad: ";
+    cin >> edad;
+    if (edad >= 18) {
+        cout << "Es mayor de edad" << endl;
+        return 1;
+    } else {
+        cout << "Es menor de edad" << endl;
+        return 0;
+    }
+}
+
+int NMayorOMenor(int a, int b) {
+    if (a == b) {
+        cout << "Los numeros son iguales" << endl;
+        return a;
+    } else {
+        int mayor = (a > b) ? a : b;
+        cout << "El numero mayor es: " << mayor << endl;
+        return mayor;
+    }
+}
+
+int Npar() {
+    int numero;
+    cout << "Ingresa un numero: ";
+    cin >> numero;
+    if (numero % 2 == 0) {
+        cout << "El numero " << numero << " es par" << endl;
+    } else {
+        cout << "El numero " << numero << " es impar" << endl;
+    }
+    return 0;
+}
+
+int main() {
+    int opcion;
+    do {
+        cout << "\n=== Menu de Condicionales (IF - ELSE) ===" << endl;
+        cout << "1. Para verificar si es mayor de edad" << endl;
+        cout << "2. Determinar numero mayor" << endl;
+        cout << "3. Ver si un numero es par o impar" << endl;
+        cout << "4. Salir" << endl;
+        cout << "Seleccione una opcion: ";
+        cin >> opcion;
+        cout << endl;
+
+        switch (opcion) {
+            case 1:
+                Laedad();
+            break;
+            case 2: {
+                int a, b;
+                cout << "Ingrese dos numeros: ";
+                cin >> a >> b;
+                NMayorOMenor(a, b);
+                break;
+            }
+            case 3:
+                Npar();
+            break;
+            case 4:
+                cout << "Saliendo del menu..." << endl;
+            break;
+            default:
+                cout << "Opcion invalida. Intente nuevamente." << endl;
+        }
+    } while (opcion != 4);
+
+    return 0;
+}

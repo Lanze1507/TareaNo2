@@ -1,0 +1,54 @@
+// Condicionales (SWITCH)
+#include <iostream>
+using namespace std;
+
+void diaSemana() {
+    int numero;
+    cout << "Ingrese un numero del 1 al 5: ";
+    cin >> numero;
+    switch (numero) {
+        case 1:
+            cout << "Lunes" << endl;
+            break;
+        case 2:
+            cout << "Martes" << endl;
+            break;
+        case 3:
+            cout << "Miercoles" << endl;
+            break;
+        case 4:
+            cout << "Jueves" << endl;
+            break;
+        case 5:
+            cout << "Viernes" << endl;
+            break;
+        default:
+            cout << "Numero invalido. Debe ser un numero del 1 al 5." << endl;
+            break;
+    }
+}
+
+int main() {
+    int opcion;
+    do {
+        cout << "\n=== Menu de Condicionales (SWITCH) ===" << endl;
+        cout << "1. Mostrar el dia de la semana" << endl;
+        cout << "2. Salir" << endl;
+        cout << "Seleccione una opcion: ";
+        cin >> opcion;
+        cout << endl;
+
+        switch (opcion) {
+            case 1:
+                diaSemana();
+                break;
+            case 2:
+                cout << "Saliendo del menu..." << endl;
+                break;
+            default:
+                cout << "Opcion invalida. Intente nuevamente." << endl;
+        }
+    } while (opcion != 2);
+
+    return 0;
+}

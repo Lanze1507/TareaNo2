@@ -1,0 +1,82 @@
+// Condicionales (FOR - WHILE)
+#include <iostream>
+using namespace std;
+
+int factos() {
+    int numero;
+    unsigned long long factorial = 1;
+    cout << "Ingrese un numero: ";
+    cin >> numero;
+    int i = 1;
+    while (i <= numero) {
+        factorial *= i;
+        i++;
+    }
+    cout << "El factorial de " << numero << " es " << factorial << endl;
+    return 0;
+}
+
+int mayorque() {
+    int num;
+    do {
+        cout << "Ingrese un numero mayor a 10 y menor que 30: ";
+        cin >> num;
+    } while (num <= 10 || num >= 30);
+
+    cout << "Numeros impares desde 1 hasta " << num << " (usando for):" << endl;
+    for (int i = 1; i <= num; i += 2) {
+        cout << i << " ";
+    }
+    cout << endl;
+    return 0;
+}
+
+int menorque() {
+    int num;
+    do {
+        cout << "Ingrese un numero mayor a 10 y menor que 30: ";
+        cin >> num;
+    } while (num <= 10 || num >= 30);
+
+    cout << "Numeros impares desde 1 hasta " << num << " (usando while):" << endl;
+    int i = 1;
+    while (i <= num) {
+        cout << i << " ";
+        i += 2;
+    }
+    cout << endl;
+    return 0;
+}
+
+int main() {
+    int opcion;
+    do {
+        cout << "\n=== Menu de Condicionales (FOR - WHILE) ===" << endl;
+        cout << "1. Calcular factorial de un numero" << endl;
+        cout << "2. Mostrar numeros impares (usando for)" << endl;
+        cout << "3. Mostrar numeros impares (usando while)" << endl;
+        cout << "4. Salir" << endl;
+        cout << "Seleccione una opcion: ";
+        cin >> opcion;
+        cout << endl;
+
+        switch (opcion) {
+            case 1:
+                factos();
+                break;
+            case 2:
+                mayorque();
+                break;
+            case 3:
+                menorque();
+                break;
+            case 4:
+                cout << "Saliendo del menu..." << endl;
+                break;
+            default:
+                cout << "Opcion invalida. Intente nuevamente." << endl;
+        }
+    } while (opcion != 4);
+
+    return 0;
+}
